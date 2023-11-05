@@ -3,7 +3,11 @@ from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic import ListView, DetailView
 from pets.models import Pet
+from . import views
 
+
+def home(request):
+    return render(request, 'pets/index.html', {})
 
 class PetsListView(ListView):
     model = Pet
