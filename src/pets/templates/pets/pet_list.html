@@ -1,0 +1,16 @@
+<ul>
+    {% for pet in object_list %}
+    <li>
+        <h1>{{ pet.title }}</h1>
+        <ul>
+            <li> <strong> Author: </strong> {{ pet.author }}</li>
+            <li> <strong> Color: </strong> {{ pet.color }}</li>
+            <li> <strong> Place: </strong> {{ pet.place }}</li>
+            <li> <strong>Description:  </strong> {{ pet.description }}</li>
+            <li> <strong>Created Date: </strong>  {{ pet.created_date }}</li>
+            <li> <strong>Published Date: </strong>  {{ pet.published_date }}</li>
+        </ul>
+    </li>
+    <br>
+    {% endfor %}
+</ul>

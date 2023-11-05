@@ -5,9 +5,9 @@ from django.utils import timezone
 class Pet(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
-    text = models.TextField(verbose_name="Color")  # Set the verbose_name attribute
-    text = models.TextField(verbose_name="Place ")  # Set the verbose_name attribute
-    description = models.TextField(default='')
+    color = models.TextField(default='', verbose_name="Color")
+    place = models.TextField(default='', verbose_name="Place")
+    description = models.TextField(default='', verbose_name="Description")
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
 
