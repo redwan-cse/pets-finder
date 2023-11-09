@@ -2,9 +2,9 @@ name: Workflow for checking code quality
 
 on:
   push:
-    branches: [ "main" ]
+    
   pull_request:
-    branches: [ "main" ]
+    
 
 jobs:
   build:
