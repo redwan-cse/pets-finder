@@ -1,4 +1,5 @@
 name: Workflow for checking code quality
+
 on:
   push:
     branches: [ "main" ]
@@ -16,10 +17,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install Dependencies
-        run: pip install django flake8
+        run: |
+          pip install django flake8
       - name: Lint with Flake8
-        run: flake8 .
+        run: |
+          flake8 .
