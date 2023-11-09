@@ -25,4 +25,4 @@ jobs:
           pip install django flake8
       - name: Lint with Flake8
         run: |
-          flake8 .
+          flake8 . --show-source --statistics
