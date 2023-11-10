@@ -1,0 +1,138 @@
+<!-- FILEPATH: /e:/PrimeTech/pet-finder/src/PetsFinderApp/templates/PetsFinderApp/login.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Finder - Login Account</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f2f2f2;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+            margin-right: 10px;
+
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        /* Responsive styles */
+        @media only screen and (max-width: 600px) {
+            form {
+                padding: 20px;
+            }
+            input[type="text"],
+            input[type="password"] {
+                margin-bottom: 10px;
+            }
+            label {
+                font-size: 14px;
+            }
+            input[type="submit"] {
+                font-size: 14px;
+            }
+            a {
+                font-size: 14px;
+            }
+        }
+        @media only screen and (max-width: 400px) {
+            input[type="text"],
+            input[type="password"] {
+                margin-bottom: 10px;
+            }
+            label {
+                font-size: 12px;
+            }
+            input[type="submit"] {
+                font-size: 12px;
+            }
+            a {
+                font-size: 12px;
+            }
+        }
+    </style>
+    </head>
+    <body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <center><h1>Login</h1></center>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                    {% csrf_token %}
+                    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; width: 100%;"></div>
+                        <div style="width: 75%;">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" name="username" required>
+                        </div>
+                        <div style="width: 75%;">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <br>
+                        <input type="submit" value="Login">
+                    </div>
+                    </form>
+                    <br>
+                    <center><p>Don't have an account? <a href="{% url 'register' %}">Register here</a></p></center>
+                    <center><p>Forgot your password? <a href="{% url 'password_reset' %}">Reset Password</a></p></center>
+                    <br
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </body>
+</html>

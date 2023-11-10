@@ -1,0 +1,176 @@
+<!-- FILEPATH: /e:/PrimeTech/pet-finder/src/PetsFinderApp/templates/PetsFinderApp/register.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Finder - Registration</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f2f2f2;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        /* Responsive styles */
+        @media only screen and (max-width: 600px) {
+            form {
+                padding: 20px;
+            }
+            input[type="text"],
+            input[type="email"],
+            input[type="password"],
+            input[type="date"],
+            input[type="tel"],
+            select {
+                margin-bottom: 10px;
+            }
+            label {
+                font-size: 14px;
+            }
+            input[type="submit"] {
+                font-size: 14px;
+            }
+            a {
+                font-size: 14px;
+            }
+        }
+        @media only screen and (max-width: 400px) {
+            input[type="text"],
+            input[type="email"],
+            input[type="password"],
+            input[type="date"],
+            input[type="tel"],
+            select {
+                margin-bottom: 10px;
+            }
+            label {
+                font-size: 12px;
+            }
+            input[type="submit"] {
+                font-size: 12px;
+            }
+            a {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+            <div class="card-header">
+                <center><h1>Registration</h1></center>
+            </div>
+            <div class="card-body">
+            </div>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-between; width: 100%;">
+                    <div style="width: 48%;">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div style="width: 48%;">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div style="width: 48%;">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div style="width: 48%;">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div style="width: 48%;">
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                    <div style="width: 48%;">
+                        <label for="gender">Gender:</label>
+                        <select id="gender" name="gender" required>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div style="width: 48%;">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div style="width: 48%;">
+                        <label for="address">Address:</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+                </div>
+                <br>
+                <input type="submit" value="Register">
+            </form>
+            <br>
+            <center><p>Already have an account? <a href="{% url 'login' %}">Login Page</a></p></center>
+            <center><a href="{% url 'home' %}">Goto Home</a></center>
+            <br>
+        </div>
+    </div>
+    </div>
+</div>
+</body>
+</html>
