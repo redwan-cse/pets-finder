@@ -13,10 +13,10 @@ USER appuser
 WORKDIR /app
 
 # Copy the requirements.txt file into the container at /app/src/
-COPY src/requirements.txt /app/src/
+COPY src/requirements.txt /app/requirements.txt
 
 # Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r src/requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the application code
 COPY . /app
