@@ -5,10 +5,6 @@ FROM python:3.12-slim
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-# Create a non-root user and switch to it
-RUN useradd -m appuser
-USER appuser
-
 # Set the working directory to /app
 WORKDIR /app
 
@@ -23,9 +19,6 @@ COPY . /app
 
 # Make port 8000 available to the world outside this container
 EXPOSE 8000
-
-# Switch back to root temporarily to apply migrations
-USER root
 
 # Apply database migrations when the container starts
 CMD ["sh", "-c", "python src/PetsFinder/manage.py migrate && python src/PetsFinder/manage.py runserver 0.0.0.0:8000"]
