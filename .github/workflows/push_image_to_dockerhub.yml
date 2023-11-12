@@ -2,26 +2,41 @@ name: Build and Push Docker Image to Docker Hub
 
 on:
   push:
-    branches:
-      - main
+  pull_request:
 
 jobs:
-    push_to_registry:
-        name: Push Docker Image to Docker Hub
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout the repo
-              uses: actions/checkout@v3
+  push_to_registry:
+    name: Push Docker Image to Docker Hub
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v3
 
-            - name: Login to Docker Hub
-              uses: docker/login-action@v2
-              with:
-                username: ${{ secrets.DOCKERHUB_USERNAME }}
-                password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.11
 
-            - name: Build and Push Docker Image
-              uses: docker/build-push-action@v4
-              with:
-                context: DockerFileFolder/
-                push: true
-                tags: ${{ secrets.DOCKERHUB_USERNAME }}/pets-finder:latest
+      - name: Upgrade pip and setuptools
+        run: |
+          python -m pip install --upgrade pip
+          pip install --upgrade setuptools
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Install dependencies in virtual environment
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install --no-cache-dir -r requirements.txt
+
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v4
+        with:
+          context: DockerFileFolder/
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/pets-finder:latest
