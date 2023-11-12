@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3.11-slim
+FROM python:3.12-slim
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -16,7 +16,7 @@ WORKDIR /app
 COPY requirements.txt /app/
 
 # Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the application code
 COPY . /app
@@ -25,4 +25,4 @@ COPY . /app
 EXPOSE 8000
 
 # Run the Django application
-CMD ["python", "src/PetsFinder/manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python", "src/PetsFinder/manage.py", "runserver"]
