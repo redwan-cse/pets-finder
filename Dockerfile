@@ -24,5 +24,5 @@ COPY . /app
 # Make port 8000 available to the world outside this container
 EXPOSE 8000
 
-# Run the Django application
-CMD ["/app/entrypoint.sh"]
+# Run the Django application with migrations and server start
+CMD ["sh", "-c", "python manage.py migrate && python manage.py runserver"]
