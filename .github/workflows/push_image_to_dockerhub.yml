@@ -36,6 +36,6 @@ jobs:
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v4
         with:
-          context: ./DockerFileFolder
+          context: .
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/pets-finder:latest
