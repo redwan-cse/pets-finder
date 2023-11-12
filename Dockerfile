@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3.12-slim
+FROM python:3.10-slim-bullseye
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -11,9 +11,6 @@ USER appuser
 
 # Set the working directory to /app
 WORKDIR /app
-
-# Uninstall zlib
-RUN apt-get remove -y zlib1g
 
 # Copy the requirements.txt file into the container at /app/
 COPY requirements.txt /app/
