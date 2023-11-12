@@ -24,5 +24,8 @@ COPY . /app
 # Make port 8000 available to the world outside this container
 EXPOSE 8000
 
+# Copy the entrypoint script and make it executable
+RUN chmod +x /app/entrypoint.sh
+
 # Run the Django application
-CMD ["python", "src/PetsFinder/manage.py", "runserver"]
+CMD ["/app/entrypoint.sh"]
