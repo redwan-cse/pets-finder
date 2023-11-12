@@ -2,7 +2,8 @@ name: Code Quality Checking with Flake8
 
 on:
   push:
-    
+    branches:
+      - main
   pull_request:
     
 
