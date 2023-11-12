@@ -25,4 +25,4 @@ COPY . /app
 EXPOSE 8000
 
 # Run the Django application with migrations and server start
-CMD ["sh", "-c", "python manage.py migrate && python manage.py runserver"]
+CMD ["sh", "-c", "python src/PetsFinder/manage.py migrate && python src/PetsFinder/manage.py runserver"]
