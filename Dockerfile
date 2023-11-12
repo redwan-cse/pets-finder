@@ -1,5 +1,8 @@
-# Use an official Python runtime as a parent image
-FROM python:3.12-slim-buster
+# Use the Ubuntu 22.04 LTS image as the base image
+FROM ubuntu:22.04
+
+# Install the Python runtime
+RUN apt-get update && apt-get install -y python3.11
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
