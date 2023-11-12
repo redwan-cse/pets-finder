@@ -1,8 +1,5 @@
-# Use the Ubuntu 22.04 LTS image as the base image
-FROM ubuntu:latest
-
-# Install the Python runtime
-RUN apt-get update && apt-get install -y python3.11
+# Use an official Python runtime as a parent image
+FROM python:3.11-slim
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
