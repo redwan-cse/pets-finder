@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3.13.0a1-slim-bullseye
+FROM python:3.13-rc-slim
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
