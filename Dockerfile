@@ -24,8 +24,8 @@ COPY . /app
 # Make port 8000 available to the world outside this container
 EXPOSE 8000
 
-# Apply database migrations during the build
-RUN python src/PetsFinder/manage.py migrate
+# Switch back to root temporarily to apply migrations
+USER root
 
-# Run the Django application
-CMD ["python", "src/PetsFinder/manage.py", "runserver", "0.0.0.0:8000"]
+# Apply database migrations when the container starts
+CMD ["sh", "-c", "python src/PetsFinder/manage.py migrate && python src/PetsFinder/manage.py runserver 0.0.0.0:8000"]
