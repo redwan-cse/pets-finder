@@ -2,8 +2,8 @@
 FROM python:3.11-slim
 
 # Set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+#ENV PYTHONDONTWRITEBYTECODE 1
+#ENV PYTHONUNBUFFERED 1
 
 # Create a non-root user and switch to it
 RUN useradd -m appuser
@@ -25,4 +25,4 @@ COPY . /app
 EXPOSE 8000
 
 # Run the Django application
-CMD ["python", "src/PetsFinder/manage.py", "runserver", "0.0.0.0:8000"]
+#CMD ["python", "src/PetsFinder/manage.py", "runserver", "0.0.0.0:8000"]
