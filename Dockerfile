@@ -1,5 +1,5 @@
 # Use the Ubuntu 22.04 LTS image as the base image
-FROM ubuntu:22.04
+FROM ubuntu-latest
 
 # Install the Python runtime
 RUN apt-get update && apt-get install -y python3.11
