@@ -16,7 +16,7 @@ WORKDIR /app
 COPY requirements.txt /app/
 
 # Create a virtual environment and activate it
-RUN python -m venv /venv && . /venv/bin/activate
+RUN python -m venv venv && source venv/Scripts/activate
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
