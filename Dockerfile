@@ -12,6 +12,9 @@ USER appuser
 # Set the working directory to /app
 WORKDIR /app
 
+# Uninstall zlib
+RUN apt-get remove -y zlib1g
+
 # Copy the requirements.txt file into the container at /app/
 COPY requirements.txt /app/
 
