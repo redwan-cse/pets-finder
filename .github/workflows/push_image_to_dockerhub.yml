@@ -23,7 +23,7 @@ jobs:
           pip install --upgrade setuptools
 
       - name: Install dependencies
-        run: pip install --no-cache-dir -r src/requirements.txt
+        run: pip install --no-cache-dir -r /app/src/requirements.txt
 
       - name: Login to Docker Hub
         uses: docker/login-action@v2
@@ -34,6 +34,6 @@ jobs:
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v4
         with:
-          context: DockerFileFolder/
+          context: .
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/pets-finder:latest
