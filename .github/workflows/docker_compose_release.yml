@@ -1,10 +1,9 @@
-name: Build and Push Docker Compose Image to Docker Hub
+name: Build and Push latest release to Docker Hub
 
 on:
   push:
     branches:
       - main
-  pull_request:
 
 jobs:
   build:
