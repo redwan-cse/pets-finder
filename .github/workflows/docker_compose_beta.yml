@@ -1,8 +1,6 @@
 name: Build and Push "beta" Image to Docker Hub
 
 on:
-  push:
-
   pull_request:
 
 jobs:
