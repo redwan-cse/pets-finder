@@ -1,9 +1,8 @@
-name: Build and Push Docker Compose Image to Docker Hub
+name: Build and Push "beta" Image to Docker Hub
 
 on:
   push:
-    branches:
-      - main
+
   pull_request:
 
 jobs:
@@ -22,7 +21,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/pets-finder:latest
+        run: docker build . --file Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/pets-finder:beta
     
       - name: Push the Docker image
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/pets-finder:latest
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/pets-finder:beta
