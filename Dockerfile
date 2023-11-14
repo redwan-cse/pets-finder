@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:windowsservercore-ltsc2022
+FROM python:3.13-rc-alpine
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
