@@ -15,8 +15,8 @@ As part of our collaborative development process, the "develop" branch is open f
 
 1. **Clone the Repository:**
    ```bash
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone https://github.com/redwan-cse/pets-finder.git
+   cd pets-finder
    ```
 
 2. **Create a Feature Branch:**
