@@ -1,4 +1,4 @@
-## Pet Finder
+# Pet Finder
 This is the documentation for the Pet Finder Django application. 
 
 ## Installation
