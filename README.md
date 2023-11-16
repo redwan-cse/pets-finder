@@ -10,7 +10,7 @@ Use this command to run the latest release:
 docker run -dp 0.0.0.0:8000:8000 redwancse/pets-finder:latest
 ```
 
-## Merging Changes into Develop Branch (Team SkyWalkers)
+## Merging Changes into Develop Branch (Team SkyWalkers):
 As part of our collaborative development process, the "develop" branch is open for your feature branches to be merged. Please follow these guidelines:
 
 1. **Clone the Repository:**
