@@ -37,6 +37,9 @@
     </div>
   </nav>
 
+
+
+
   <!-- Showcase -->
   <section class="bg-dark text-light p-5 p-lg-5 pt-lg-5 text-center">
     <div class="container">
@@ -65,6 +68,37 @@
   </section>
 
   <!-- Boxes -->
+
+
+  <!-- Main Content -->
+<div class="container mt-4">
+  <div class="row">
+      <!-- Search Form -->
+      <div class="col-md-4">
+          <form>
+              <div class="form-group">
+                  <label for="locationInput">Search Lost Pets by Location</label>
+                  <input type="text" class="form-control" id="locationInput" placeholder="Enter location">
+              </div>
+              <button type="submit" class="btn btn-primary">Search</button>
+          </form>
+      </div>
+
+      <!-- Pets Display -->
+      <div class="col-md-8">
+          <h2>Lost Pets</h2>
+          <div class="row" id="petList">
+              <!-- Lost Pets will be displayed here -->
+          </div>
+
+          <!-- Pagination -->
+          <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-center" id="pagination"></ul>
+          </nav>
+      </div>
+  </div>
+</div>
+
 
   <!-- FAQ accordion-->
   <section id="questions" class="p-5">
@@ -202,5 +236,60 @@
   </footer>
   <!-- Bootstrap JS CDN -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<!-- Bootstrap JS and jQuery CDN links -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    // Sample data for demonstration
+    const lostPets = [
+        { name: 'Pet 1', description: 'Description of pet 1', image: 'pet1.jpg' },
+        { name: 'Pet 2', description: 'Description of pet 2', image: 'pet2.jpg' },
+        // Add more sample pets here
+        // { name: 'Pet 3', description: 'Description of pet 3', image: 'pet3.jpg' },
+    ];
+
+    // Function to display pets
+    function displayPets(pageNumber) {
+        const itemsPerPage = 4; // Number of items per page
+        const startIndex = (pageNumber - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const paginatedPets = lostPets.slice(startIndex, endIndex);
+
+        const petList = document.getElementById('petList');
+        petList.innerHTML = '';
+
+        paginatedPets.forEach(pet => {
+            const card = `
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <img src="${pet.image}" class="card-img-top" alt="${pet.name}">
+                        <div class="card-body">
+                            <h5 class="card-title">${pet.name}</h5>
+                            <p class="card-text">${pet.description}</p>
+                            <a href="#" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            petList.innerHTML += card;
+        });
+
+        // Pagination
+        const totalPages = Math.ceil(lostPets.length / itemsPerPage);
+        const pagination = document.getElementById('pagination');
+        pagination.innerHTML = '';
+
+        for (let i = 1; i <= totalPages; i++) {
+            const li = `<li class="page-item ${pageNumber === i ? 'active' : ''}"><a class="page-link" href="#" onclick="displayPets(${i})">${i}</a></li>`;
+            pagination.innerHTML += li;
+        }
+    }
+
+    // Initially display the first page of pets
+    displayPets(1);
+</script>
 </body>
 </html>
