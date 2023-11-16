@@ -64,10 +64,10 @@ As part of our collaborative development process, the "develop" branch is open f
    git pull origin develop
    ```
 9. **Test the beta images:**
-Use this command to run the devlop branch image:
-```shell
-docker run -dp 0.0.0.0:8000:8000 redwancse/pets-finder:beta
-```
+   Use this command to run the devlop branch image:
+   ```shell
+   docker run -dp 0.0.0.0:8000:8000 redwancse/pets-finder:beta
+   ```
 
 Happy coding,
 Team SkyWalkers
