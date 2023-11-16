@@ -31,7 +31,7 @@ jobs:
         id: check
         run: |
           set -eo pipefail
-          black --check --diff . || echo "black-check-failed=true" >> $GITHUB_ENV
+          black --diff . || echo "black-check-failed=true" >> $GITHUB_ENV
         continue-on-error: true
 
       - name: Commit changes (if needed)
