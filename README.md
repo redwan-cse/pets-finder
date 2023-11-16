@@ -25,7 +25,7 @@ As part of our collaborative development process, the "develop" branch is open f
    ```
 
 3. **Make Changes:**
-   - Make the necessary changes to your code.
+   - Make the necessary changes to your code. And check status
    ```bash
    git status
    ```
