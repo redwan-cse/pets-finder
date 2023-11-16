@@ -7,14 +7,12 @@ on:
 
 jobs:
   build:
+    
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout the repo
         uses: actions/checkout@v2
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
 
       - name: Login to Docker Hub
         uses: docker/login-action@v3
@@ -22,10 +20,8 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and push
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          file: ./Dockerfile
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/pets-finder:beta
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/pets-finder:beta
+    
+      - name: Push the Docker image
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/pets-finder:beta
