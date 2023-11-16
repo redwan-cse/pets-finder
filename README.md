@@ -7,7 +7,7 @@ The latest Docker image is available on Docker Hub at `redwancse/pets-finder:lat
 ## Run the container
 Use this command to run the latest release:
 ```shell
-docker run -dp 0.0.0.0:8000:8000 redwancse/pets-finder:latest
+docker run -dp 0.0.0.0:8080:8080 redwancse/pets-finder:latest
 ```
 
 ## Merging Changes into Develop Branch (Team SkyWalkers):
@@ -69,5 +69,5 @@ As part of our collaborative development process, the "develop" branch is open f
 9. **Test the beta images:**
    Use this command to run the devlop branch image:
    ```shell
-   docker run -dp 0.0.0.0:8000:8000 redwancse/pets-finder:beta
+   docker run -dp 0.0.0.0:8080:8080 redwancse/pets-finder:beta
    ```
