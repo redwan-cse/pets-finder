@@ -46,11 +46,11 @@ As part of our collaborative development process, the "develop" branch is open f
    ```bash
    git request-pull -p <base> <head>
    ```
-   Replace `<base>` with the name of the branch you want to merge into (e.g., "develop") and `<head>` with the name of your feature branch (e.g., "feature-branch").
+   Replace `<base>` with the name of the branch you want to merge into (e.g., "develop") and `<head>` with the name of your feature branch (e.g., "feature/your-feature-name").
 
    For example:
    ```bash
-   git request-pull -p develop feature-branch-name
+   git request-pull -p develop feature/your-feature-name
    ```
 
 7. **Review and Merge:**
