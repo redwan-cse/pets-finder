@@ -12,7 +12,7 @@ WORKDIR /app
 COPY requirements.txt /app/
 
 # Update and install dependencies
-RUN apt-get update && apt-get upgrade && apt-get install -y \
+RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     python3-pip \
     python3-dev \
     libpq-dev \
