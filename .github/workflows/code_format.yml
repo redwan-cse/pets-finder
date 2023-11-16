@@ -28,16 +28,19 @@ jobs:
           python -m pip install black
 
       - name: Check code formatting
+        id: check
         run: |
-          black . --check --diff
+          set -eo pipefail
+          black --check --diff . || echo "black-check-failed=false" >> $GITHUB_ENV
 
       - name: Commit changes (if needed)
-        uses: EndBug/add-and-commit@v4
-        with:
-          author_name: ${{ github.actor }}
-          author_email: ${{ github.actor }}@users.noreply.github.com
-          message: "Format code with black"
-          add: "."
+        id: commit
+        if: env.black-check-failed != 'false'
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git add .
+          git commit -m "Format code with black"
 
       - name: Push changes (if needed)
         if: steps.commit.outputs.should_commit == 'true'
