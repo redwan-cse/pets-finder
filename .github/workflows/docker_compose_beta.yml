@@ -1,4 +1,4 @@
-name: Build and Push "beta" Image to Docker Hub
+name: Build and Push "beta" Image
 
 on:
   push:
