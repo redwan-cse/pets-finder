@@ -1,4 +1,4 @@
-name: Build and Push latest release to Docker Hub
+name: Build and Push latest release
 
 on:
   push:
