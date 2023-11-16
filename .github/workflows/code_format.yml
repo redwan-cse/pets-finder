@@ -31,16 +31,17 @@ jobs:
         id: check
         run: |
           set -eo pipefail
-          black --check --diff . || echo "black-check-failed=false" >> $GITHUB_ENV
+          black --check --diff . || echo "black-check-failed=true" >> $GITHUB_ENV
+        continue-on-error: true
 
       - name: Commit changes (if needed)
         id: commit
-        if: env.black-check-failed != 'false'
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
           git add .
           git commit -m "Format code with black"
+        if: steps.check.outputs.black-check-failed == 'true'
 
       - name: Push changes (if needed)
         if: steps.commit.outputs.should_commit == 'true'
