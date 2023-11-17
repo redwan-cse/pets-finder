@@ -4,6 +4,15 @@ body::before {
     height: 60px;
 }
 
+body {
+    background-color: #f8f9fa;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+
 #map {
     height: 100%;
     width: 100%;
