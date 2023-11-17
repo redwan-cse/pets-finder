@@ -7,9 +7,11 @@ def home(request):
     return render(request, "PetsFinderApp/index.html", {})
 
 
+def pets(request):
+    return render(request, "PetsFinderApp/pets.html", {})
+
 def register(request):
     return render(request, "PetsFinderApp/register.html", {})
-
 
 def login(request):
     return render(request, "PetsFinderApp/login.html", {})
