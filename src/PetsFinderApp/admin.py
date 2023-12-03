@@ -1,3 +1,5 @@
+# ./src/PetsFinderApp/admin.py
+
 from django.contrib import admin
 from .models import Category, Pet, PetInstance, Owner
 
