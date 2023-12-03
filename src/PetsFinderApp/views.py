@@ -22,23 +22,23 @@ def register(request):
 
 
 def login(request):
-    """View function to display a login form."""	
+    """View function to display a login form."""
     context = {}
     return render(request, "PetsFinderApp/login.html", context=context)
 
 
 def logout(request):
-    """View function to logout a user."""	
+    """View function to logout a user."""
     pass
 
 
 def password_reset(request):
-    """View function to display a password reset form."""	
+    """View function to display a password reset form."""
     context = {}
     return render(request, "PetsFinderApp/password_reset.html", context=context)
 
 
-### The following views are for the Pet, PetInstance, and Owner models.
+# The following views are for the Pet, PetInstance, and Owner models.
 def pet_list(request):
     """View function to display a list of pets."""
     pets = Pet.objects.all()
