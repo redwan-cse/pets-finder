@@ -1,8 +1,10 @@
+# /src/PetsFinderApp/views.py
+
 from django.shortcuts import render, get_object_or_404
 from .models import Pet, PetInstance, Owner  # We can use , Category as well if we want to display the category in the views.
 
-# Create your views here.
 
+# Create your views here.
 def home(request):
     """View function to display the home page."""
     context = {}
