@@ -3,6 +3,7 @@
 from django.contrib import admin
 from .models import Category, Pet, PetInstance, Owner
 
+
 # Register the Admin class for Category using the decorator
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
