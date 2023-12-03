@@ -19,15 +19,6 @@ class PetAdmin(admin.ModelAdmin):
     list_filter = ('category', 'owner')
     ordering = ('name', 'category', 'owner')
 
-    fieldsets = (
-        (None, {
-            'fields': ('name', 'category', 'owner', 'description', 'microchip_id')
-        }),
-        ('Breed', {
-            'fields': ('breed', 'display_breed')
-        }),
-    )
-
 
 # Register the Admin class for PetInstance using the decorator
 @admin.register(PetInstance)
