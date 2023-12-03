@@ -21,4 +21,4 @@ COPY . /app
 EXPOSE 8080
 
 # Apply database migrations when the container starts
-CMD ["sh", "-c", "python src/PetsFinder/manage.py migrate && python src/PetsFinder/manage.py runserver 0.0.0.0:8080"]
+CMD ["sh", "-c", "python src/PetsFinder/manage.py makemigrations && python src/PetsFinder/manage.py migrate && python src/PetsFinder/manage.py runserver 0.0.0.0:8080"]
