@@ -1,4 +1,4 @@
-# Use an official Python runtime as a parent image Safe 3.10.13-alpine3.17
+# Use an official Python runtime as a parent image. Safe image 3.10.13-alpine3.17
 FROM python:3.13-rc-alpine
 
 # Set environment variables
@@ -12,6 +12,7 @@ WORKDIR /app
 COPY requirements.txt /app/
 
 # Update and install dependencies
+# RUN apt-get update && apt-get install -y
 RUN apk update && apk upgrade -U
 
 # Install any needed packages specified in requirements.txt
