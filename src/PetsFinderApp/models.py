@@ -44,7 +44,7 @@ class Pet(models.Model):
     # Category class has already been defined so we can specify the object above.
     category = models.ManyToManyField(
         Category, help_text="Select a category for this pet")
-    
+
     # Breed of the pet
     breed = models.CharField(max_length=200)
 
@@ -123,4 +123,3 @@ class Owner(models.Model):
     def __str__(self):
         """String for representing the Model object."""
         return f'{self.last_name}, {self.first_name}'
-
