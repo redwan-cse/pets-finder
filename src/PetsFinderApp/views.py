@@ -81,3 +81,4 @@ def owner_detail(request, owner_id):
     """View function to display details of a specific owner."""
     owner = get_object_or_404(Owner, id=owner_id)
     return render(request, 'owner_detail.html', {'owner': owner})
+
