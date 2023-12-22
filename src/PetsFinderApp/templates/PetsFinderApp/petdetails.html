@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>PetFinder</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .pet-card {
+            margin-bottom: 1.5rem;
+        }
+
+        .pet-img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .pagination-container {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+        pets
+        .pagination {
+            display: flex;
+            list-style: none;
+        }
+
+        .page-item {
+            margin: 0 5px;
+        }
+
+        .page-link {
+            background-color: #007bff;
+            color: #fff;
+            border: 1px solid #007bff;
+        }
+
+        .page-link:hover {
+            background-color: #0056b3;
+            color: #fff;
+            border: 1px solid #0056b3;
+        }
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+    <div class="container">
+      <a href="#" class="navbar-brand">Pets Finder</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span></button>
+      
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="{% url 'home' %}" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'petdetails' %}" class="nav-link">Pets</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'pets' %}" class="nav-link">Pet Listing</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'register' %}" class="nav-link">Join Now</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'login' %}" class="nav-link">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+<div class="container">
+
+	 <!-- Search Form -->
+      <div class="col-md-6">
+          <form>
+              <div class="form-group">
+                  <label for="locationInput">Search Lost Pets by Location</label>
+                  <input type="text" class="form-control" id="locationInput" placeholder="Enter location">
+              </div>
+              <button type="submit" class="btn btn-primary">Search</button>
+          </form>
+      </div> 
+	  
+	  </br>
+	  
+    <div class="row">
+	  <!-- Pets Display -->
+        <div class="col-md-4">
+            <div class="card pet-card">
+                <img src="https://via.placeholder.com/300" class="card-img-top pet-img" alt="Pet Image">
+                <div class="card-body">
+                    <h5 class="card-title">Pet Name</h5>
+                    <p class="card-text">Breed: Cat</p>
+                    <p class="card-text">Age: 2 years</p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+		
+		   <div class="col-md-4">
+            <div class="card pet-card">
+                <img src="https://via.placeholder.com/300" class="card-img-top pet-img" alt="Pet Image">
+                <div class="card-body">
+                    <h5 class="card-title">Pet Name</h5>
+                    <p class="card-text">Breed: Cat</p>
+                    <p class="card-text">Age: 2 years</p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+		
+		   <div class="col-md-4">
+            <div class="card pet-card">
+                <img src="https://via.placeholder.com/300" class="card-img-top pet-img" alt="Pet Image">
+                <div class="card-body">
+                    <h5 class="card-title">Pet Name</h5>
+                    <p class="card-text">Breed: Cat</p>
+                    <p class="card-text">Age: 2 years</p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+		
+		   <div class="col-md-4">
+            <div class="card pet-card">
+                <img src="https://via.placeholder.com/300" class="card-img-top pet-img" alt="Pet Image">
+                <div class="card-body">
+                    <h5 class="card-title">Pet Name</h5>
+                    <p class="card-text">Breed: Cat</p>
+                    <p class="card-text">Age: 2 years</p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+		
+		   <div class="col-md-4">
+            <div class="card pet-card">
+                <img src="https://via.placeholder.com/300" class="card-img-top pet-img" alt="Pet Image">
+                <div class="card-body">
+                    <h5 class="card-title">Pet Name</h5>
+                    <p class="card-text">Breed: Cat</p>
+                    <p class="card-text">Age: 2 years</p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+		
+		   <div class="col-md-4">
+            <div class="card pet-card">
+                <img src="https://via.placeholder.com/300" class="card-img-top pet-img" alt="Pet Image">
+                <div class="card-body">
+                    <h5 class="card-title">Pet Name</h5>
+                    <p class="card-text">Breed: Cat</p>
+                    <p class="card-text">Age: 2 years</p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+		
+
+        <!-- Add more pet cards as needed -->
+
+    </div>
+
+    <div class="pagination-container">
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <!-- Add more page items as needed -->
+        </ul>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies (optional) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

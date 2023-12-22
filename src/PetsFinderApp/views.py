@@ -11,6 +11,12 @@ def home(request):
     return render(request, "PetsFinderApp/index.html", context=context)
 
 
+def petdetails(request):
+    """View function to display a list of pets."""
+    context = {}
+    return render(request, "PetsFinderApp/petdetails.html", context=context)
+
+
 def pets(request):
     """View function to display a list of pets."""
     context = {}
