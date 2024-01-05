@@ -1,0 +1,43 @@
+# Ignore Python cache files and directories
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore database files
+*.db
+*.sqlite3
+
+# Ignore log files
+*.log
+
+# Ignore Docker related files
+.dockerignore
+.dockerfile
+.docker-compose.yml
+
+# Ignore Node.js modules and logs
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Ignore Sass and SCSS cache files
+*.sass-cache
+*.scssc
+
+# Ignore bundle directory
+.bundle
+
+# Ignore directories that are typically not needed in the Docker image
+/config
+/log
+/tmp
+/vendor/bundle
+/public/system
+/public/uploads
+/public/assets
+
+# Ignore IDE configuration directories
+.idea
+.vscode
