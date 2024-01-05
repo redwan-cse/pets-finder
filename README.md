@@ -71,3 +71,9 @@ As part of our collaborative development process, the "develop" branch is open f
    ```shell
    docker run -dp 0.0.0.0:8080:8080 redwancse/pets-finder:beta
    ```
+
+
+
+$ docker-compose build
+$ docker-compose up
+$ docker-compose down
