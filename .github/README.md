@@ -1,6 +1,13 @@
 # Pet Finder
 This is the documentation for the Pet Finder Django application. 
 
+<p align="center">
+  <a href="https://github.com/redwan-cse/pets-finder/releases"><img src="https://img.shields.io/github/v/release/redwan-cse/pets-finder"></a>
+  <a href="https://github.com/redwan-cse/pets-finder/commits/main"><img src="https://img.shields.io/github/last-commit/redwan-cse/pets-finder"></a>
+  <a href="https://github.com/redwan-cse/pets-finder/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/redwan-cse/pets-finder"></a>
+  <a href="https://github.com/redwan-cse/pets-finder"><img src="https://img.shields.io/github/languages/code-size/redwan-cse/pets-finder"></a>
+</p>
+
 ## Installation
 The latest Docker image is available on Docker Hub at `redwancse/pets-finder:latest`.
 
