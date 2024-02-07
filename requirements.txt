@@ -1,5 +1,5 @@
 asgiref==3.7.2
-Django==5.0
+Django==5.0.2
 flake8==6.1.0
 mccabe==0.7.0
 pycodestyle==2.11.1
